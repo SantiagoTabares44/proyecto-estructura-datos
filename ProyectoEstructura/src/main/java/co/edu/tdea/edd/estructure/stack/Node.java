@@ -2,15 +2,18 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package co.edu.tdea.edd.estructure.linkedList.singly;
+package co.edu.tdea.edd.estructure.stack;
 
-
+/**
+ *
+ * @author sanni
+ */
 public class Node<T> {
-    private T value;
-    private Node<T> next;
+    T value;
+    Node<T> next;
     
-    public Node(T Newvalue){
-        this.value = Newvalue;
+    public Node(T newValue){
+        this.value = newValue;
         this.next = null;
     }
 
@@ -29,6 +32,5 @@ public class Node<T> {
     public void setNext(Node<T> next) {
         this.next = next;
     }
-
     
 }

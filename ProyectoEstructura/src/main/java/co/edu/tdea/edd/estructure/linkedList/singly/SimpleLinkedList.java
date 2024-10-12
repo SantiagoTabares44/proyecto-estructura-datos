@@ -8,6 +8,7 @@ import static java.util.Objects.*;
 
 public class SimpleLinkedList<T> {
     private Node<T> root;
+    
     //--Metodo generico añadir--
     
     public void add(T newValue) {
@@ -43,7 +44,7 @@ public class SimpleLinkedList<T> {
             }
         }
     }
-    
+    //--Metodo generico imprimir--
     public void print() {
         if (nonNull(root)) {
             Node temp = root;
@@ -54,6 +55,19 @@ public class SimpleLinkedList<T> {
         } else {
             System.out.println("La lista está vacía.");
         }
+    }
+    
+    //--Metodo generico buscar--
+    public T search(T newValue){
+        Node current = root;
+
+        while (current != null) {
+            if (current.getValue().equals(newValue)) {
+                return (T) current.getValue();
+            }
+                current = current.getNext();
+        }
+        return null;
     }
     
 }
