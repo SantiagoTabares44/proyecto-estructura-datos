@@ -4,10 +4,30 @@
  */
 package co.edu.tdea.edd.estructure.linkedList.singly;
 
-/**
- *
- * @author sanni
- */
-public class Node {
+
+public class Node<T> {
+    private T value;
+    private Node<T> next;
+    
+    public Node(T Newvalue){
+        this.value = Newvalue;
+    }
+
+    public T getValue() {
+        return value;
+    }
+
+    public void setValue(T value) {
+        this.value = value;
+    }
+
+    public Node<T> getNext() {
+        return next;
+    }
+
+    public void setNext(Node<T> next) {
+        this.next = next;
+    }
+
     
 }
