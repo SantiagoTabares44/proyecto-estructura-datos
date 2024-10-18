@@ -15,7 +15,7 @@ public class Stack<T> {
         if (NodeTop == null) {  
             NodeTop = newNode;
         } else {
-            newNode.next = NodeTop; 
+            newNode.setNext(NodeTop); 
             NodeTop = newNode;  
         }
         System.out.println("Paciente " + NodeTop + " añadido a la pila.");
@@ -27,8 +27,8 @@ public class Stack<T> {
             System.out.println("No existen pacientes en la pila.");
             return null;  
         } else {
-            T NodePopValue = NodeTop.value;  
-            NodeTop = NodeTop.next;  
+            T NodePopValue = NodeTop.getValue();  
+            NodeTop = NodeTop.getNext();  
             System.out.println("El paciente " + NodePopValue + " ha sido retirado.");
             return NodePopValue;
         }
