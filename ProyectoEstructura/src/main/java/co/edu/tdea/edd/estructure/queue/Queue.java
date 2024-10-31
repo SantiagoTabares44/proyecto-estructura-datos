@@ -19,7 +19,7 @@ public class Queue<T> {
     }
 
     //--Método para añadir elementos a la cola (enqueue)
-    public void enqueue(T newValue) {
+    public void Addqueue(T newValue) {
         Node<T> newNode = new Node<>(newValue);
         if (rear == null) {  // Si la cola está vacía
             front = rear = newNode;
@@ -31,7 +31,7 @@ public class Queue<T> {
     }
 
     //--Método para eliminar elementos de la cola (dequeue)
-    public T dequeue() {
+    public T deletequeue() {
         if (front == null) {  // Si la cola está vacía
             System.out.println("No existen pacientes en la cola.");
             return null;
