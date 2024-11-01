@@ -4,6 +4,8 @@
  */
 package co.edu.tdea.edd.estructure.queue;
 
+import co.edu.tdea.edd.model.user.HealthContactUser;
+
 /**
  *
  * @author Britney Niño
@@ -49,5 +51,13 @@ public class Queue<T> {
     //--Método para verificar si la cola está vacía
     public boolean isEmpty() {
         return front == null;
+    }
+
+    public void enqueue(HealthContactUser contact) {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    }
+
+    public HealthContactUser dequeue() {
+        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
     }
 }
