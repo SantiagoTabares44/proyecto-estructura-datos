@@ -9,10 +9,11 @@ import co.edu.tdea.edd.estructure.stack.Stack;
 import co.edu.tdea.edd.model.user.HealthContactUser;
 import co.edu.tdea.edd.model.user.User;
 
-/**
- *
- * @author Britney Niño
- */
+/*
+HealthContactService: Se cambió el uso de if-else por switch para un manejo más limpio 
+de las categorías de triaje.
+*/
+
 public class HealthContactService {
     private Queue<HealthContactUser> triageI = new Queue<>();
     private Queue<HealthContactUser> triageII = new Queue<>();
@@ -24,18 +25,25 @@ public class HealthContactService {
     public void createContact(User patient, String triageCategory) {
         HealthContactUser contact = new HealthContactUser(patient, triageCategory);
 
-        if ("I".equals(triageCategory)) {
-            triageI.enqueue(contact);
-        } else if ("II".equals(triageCategory)) {   
-            triageII.enqueue(contact);
-        } else if ("III".equals(triageCategory)) {
-            triageIII.enqueue(contact);
-        } else if ("IV".equals(triageCategory)) {
-            triageIV.enqueue(contact); 
-        } else if ("V".equals(triageCategory)) {
-            triageV.enqueue(contact); 
-        } else {
-            System.out.println("Categoría de triaje no válida.");
+        //Se utilizan colas para agregar los pacientes
+        switch (triageCategory) {
+            case "I":
+                triageI.Addqueue(contact);
+                break;
+            case "II":
+                triageII.Addqueue(contact);
+                break;
+            case "III":
+                triageIII.Addqueue(contact);
+                break;
+            case "IV":
+                triageIV.Addqueue(contact);
+                break;
+            case "V":
+                triageV.Addqueue(contact);
+                break;
+            default:
+                System.out.println("Categoría de triaje no válida.");
         }
     }
 
@@ -43,22 +51,23 @@ public class HealthContactService {
         HealthContactUser contact;
 
         if (!triageI.isEmpty()) {
-            contact = triageI.dequeue();
+            contact = triageI.deletequeue();
         } else if (!triageII.isEmpty()) {
-            contact = triageII.dequeue();
+            contact = triageII.deletequeue();
         } else if (!triageIII.isEmpty()) {
-            contact = triageIII.dequeue();
+            contact = triageIII.deletequeue();
         } else if (!triageIV.isEmpty()) {
-            contact = triageIV.dequeue();
+            contact = triageIV.deletequeue();
         } else if (!triageV.isEmpty()) {
-            contact = triageV.dequeue();
+            contact = triageV.deletequeue();
         } else {
             System.out.println("No se encontraron pacientes pendientes por atender.");
             return;
         }
 
+        //Se utilizan pilas para agregar la facturacion
         facturacion.push(contact);
-        System.out.println("Paciente remitido a facturación: " + contact.getPatient().getFirstName());
+        System.out.println("Paciente remitido a facturacion: " + contact.getPatient().getFirstName());
     }
 
     public void billPatient() {

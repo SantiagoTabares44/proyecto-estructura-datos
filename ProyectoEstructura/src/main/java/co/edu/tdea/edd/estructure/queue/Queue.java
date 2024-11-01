@@ -5,6 +5,7 @@
 package co.edu.tdea.edd.estructure.queue;
 
 import co.edu.tdea.edd.model.user.HealthContactUser;
+import co.edu.tdea.edd.model.user.User;
 
 /**
  *
@@ -22,6 +23,7 @@ public class Queue<T> {
 
     //--Método para añadir elementos a la cola (enqueue)
     public void Addqueue(T newValue) {
+        
         Node<T> newNode = new Node<>(newValue);
         if (rear == null) {  // Si la cola está vacía
             front = rear = newNode;
@@ -29,7 +31,7 @@ public class Queue<T> {
             rear.setNext(newNode);  // Añadir el nuevo nodo al final
             rear = newNode;  // Actualizar el puntero rear
         }
-        System.out.println("Paciente " + newNode.getValue() + " añadido a la cola.");
+        System.out.println("Paciente " + newNode.getValue() + " agregado a la cola.");
     }
 
     //--Método para eliminar elementos de la cola (dequeue)

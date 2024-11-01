@@ -8,25 +8,27 @@ import co.edu.tdea.edd.estructure.linkedList.singly.SimpleLinkedList;
 import co.edu.tdea.edd.model.user.User;
 
 /**
- *
- * @author Britney Niño
+Patient: Se mejoró el método find para comparar documentos y 
+* evitar problemas al buscar en la lista enlazada.
  */
+
 public class Patient {
-     private SimpleLinkedList<User> pacientes = new SimpleLinkedList<>();
+    private SimpleLinkedList<User> pacientes = new SimpleLinkedList<>();
 
     public void add(User patient) {
         pacientes.add(patient);
     }
 
     public User find(String document) {
-        return pacientes.search(new User());
+        User dummyUser = new User("", "", document); // Crear un usuario temporal solo con el documento
+        return pacientes.search(dummyUser);
     }
 
-    public void print(){
+    public void print() {
         pacientes.print();
     }
 
-    public void uploadUser(User paciente) {
+    public void updateUser(User paciente) {
         User existingUser = find(paciente.getDocument());
         if (existingUser != null) {
             pacientes.remove(existingUser);
@@ -34,4 +36,3 @@ public class Patient {
         }
     }
 }
-

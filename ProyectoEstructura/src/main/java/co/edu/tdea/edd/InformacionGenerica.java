@@ -20,7 +20,7 @@ public class InformacionGenerica {
         this.description = description;
     }
 
-    // Getters para code y description
+    // Getters para la descripcion
     public String getCode() {
         return code;
     }
@@ -33,11 +33,10 @@ public class InformacionGenerica {
     private static ValueSetCode valueSetCode;
 
     public static void main(String[] args) {
-        // Inicialización de las instancias de InformacionGenerica y ValueSetCode
-        informacionGenerica = new InformacionGenerica("001", "Descripción genérica");
+        informacionGenerica = new InformacionGenerica("001", "Descripcion generica");
         valueSetCode = new ValueSetCode("002", "Descripción del código de valor");
 
-        // Impresión de los valores
+        // imprime los valores
         System.out.println("Información Genérica: " + informacionGenerica.getCode() + " - " + informacionGenerica.getDescription());
         System.out.println("Codigo: " + valueSetCode.getCode());
         System.out.println("Descripcion:" + valueSetCode.getDescription());

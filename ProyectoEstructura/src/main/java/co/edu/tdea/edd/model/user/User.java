@@ -1,6 +1,5 @@
 package co.edu.tdea.edd.model.user;
 
-
 import co.edu.tdea.edd.model.commons.BiologicalSexEnum;
 import co.edu.tdea.edd.model.commons.CivilStatusEnum;
 import co.edu.tdea.edd.model.commons.Disability;
@@ -33,70 +32,61 @@ import java.time.LocalDateTime;
 public class User implements Serializable {
 
     private String firstName;
-
     private String middleName;
-
     private String lastName;
-
     private String surname;
-
     private Country nationality;
-
     private LocalDateTime birthDateTime;
-
     private BiologicalSexEnum biologicalSex;
-
     private Disability disability;
-
     private Ethni ethni;
-
     private EthnicCommunity ethniaCommunity;
-
     private GenderIdentity genderIdentity;
-
     private Country countryOfResidence;
-
     private City city;
-
     private String address;
-
     private LivingPlace livingPlace;
-
     private CivilStatusEnum civilStatus;
-
     private EducationLevelEnum educationLevel;
-
     private Occupation occupation;
-
     private Boolean voluntaryDonation;
-
     private LocalDate voluntaryDonationSubscriptionDate;
-
     private Boolean advanceWill;
-
     private Long advanceWillHSPId;
-
     private HealthServiceProvider advanceWillHSP;
-
     private LocalDate advanceWillSubscriptionDate;
-
     private HealthBenefitsPlanEntity healthBenefitsPlanEntity;
-
     private HealthServiceProvider healthServiceProvider;
-
     private HealthBenefitsPlanEntity familyCompensationBox;
-
     private HealthBenefitsPlanEntity occupationalRiskInsuranceCompany;
-    
     private String document;
-    
-    
+
+    // Constructor simplificado para que puedas crear usuarios en EddApplication
+    public User(String firstName, String lastName, String document) {
+        this.firstName = firstName;
+        this.lastName = lastName;
+        this.document = document;
+        // Inicializa otros campos con valores por defecto si es necesario
+    }
+
     @Override
     public boolean equals(Object obj) {
         if (this == obj) return true;
         if (obj == null || getClass() != obj.getClass()) return false;
-        User user = (User ) obj;
-        return document.equals(user.document); 
+        User user = (User) obj;
+        return document.equals(user.document);
     }
 
+    // Implementa el método find para buscar por documento
+    public User find(String document) {
+        // Aquí puedes implementar la lógica para buscar un usuario por documento.
+        // Este es solo un ejemplo básico que siempre devuelve null.
+        return null; // Cambia esto por tu propia lógica de búsqueda
+    }
+
+    public String getFirstName() {
+        return firstName; // Devuelve el primer nombre
+    }
+
+    // Otros métodos getter y lógica adicional si es necesario
 }
